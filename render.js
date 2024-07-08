@@ -5,6 +5,9 @@ import { JSDOM } from "jsdom"
 import markdownit from "markdown-it"
 import Shiki from "@shikijs/markdown-it"
 
+import { execSync } from 'child_process'
+
+
 const contentsDir = path.resolve(process.cwd(), "contents")
 const outputDir = path.resolve(process.cwd(), "blog")
 const metadataFile = path.resolve(process.cwd(), "metadata.json")
@@ -18,7 +21,10 @@ md.use(
     theme: "andromeeda",
   }),
 )
-//md.use(addFilenameAttribute)
+
+
+const commitID = execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
+
 
 
 async function processFile(file) {
@@ -36,9 +42,8 @@ async function processFile(file) {
 
 <head>
 <title>${data.title}</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
 </head>
 
 <body class="prose md:prose-lg lg:prose-xl p-4 prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-lg">
@@ -102,7 +107,7 @@ async function processFile(file) {
   document.body.appendChild(footer);
 */
   document.getElementById("info").innerHTML =
-    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString()}`
+    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString()}<br/>Commit ID: ${commitID}`
 
   const htmlContent = dom.serialize()
 
