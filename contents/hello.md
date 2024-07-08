@@ -18,7 +18,6 @@ for i in range(1,4000):
 ```
 
 ```ts
-import SOMELongNameShitsBruhWhatTestAsdffffffffasdnd from "SomewhereElseFromAndromeda"
 
 export interface PreviewState {
     resource: string,
