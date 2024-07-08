@@ -19,7 +19,8 @@
     "prettier": "^3.3.2",
     "prettier-plugin-tailwindcss": "^0.6.5",
     "tailwindcss": "^3.4.4",
-    "vite": "^5.3.1"
+    "vite": "^5.3.1",
+    "vite-plugin-sitemap": "^0.6.2"
   },
   "dependencies": {
     "jsdom": "^24.1.0"

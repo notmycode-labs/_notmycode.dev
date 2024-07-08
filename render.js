@@ -5,8 +5,7 @@ import { JSDOM } from "jsdom"
 import markdownit from "markdown-it"
 import Shiki from "@shikijs/markdown-it"
 
-import { execSync } from 'child_process'
-
+import { execSync } from "child_process"
 
 const contentsDir = path.resolve(process.cwd(), "contents")
 const outputDir = path.resolve(process.cwd(), "blog")
@@ -22,10 +21,9 @@ md.use(
   }),
 )
 
-
-const commitID = execSync('git rev-parse --short HEAD', { encoding: 'utf8' }).trim();
-
-
+const commitID = execSync("git rev-parse --short HEAD", {
+  encoding: "utf8",
+}).trim()
 
 async function processFile(file) {
   console.log("Processing", file)
@@ -44,9 +42,13 @@ async function processFile(file) {
 <title>${data.title}</title>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap')
+    </style>
+      
 </head>
 
-<body class="prose md:prose-lg lg:prose-xl p-4 prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-lg">
+<body class="prose md:prose-lg lg:prose-3xl p-2 prose-h1:text-3xl prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-lg">
 <h2 class="text-center theme-toggle">${data.title}</h2>
 
 <div id="info" class="text-sm font-bold"></div>

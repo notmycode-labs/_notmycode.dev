@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 :root {
-  --background-color: #010101;
+  --background-color: rgb(10, 10, 36);
   --text-color: #ffddde;
-  --link-text-color: #e977bf;
+  --link-text-color: #e281d8;
 }
 
 body {
@@ -14,4 +14,27 @@ body {
   font-style: normal;
   background-color: var(--background-color);
   color: var(--text-color);
+}
+
+a {
+  color: var(--link-text-color);
+}
+
+a:hover {
+  color: rgb(143, 143, 231);
+}
+
+#rainbow_title {
+  background: linear-gradient(
+    45deg,
+    rgb(255, 255, 255),
+    rgb(255, 60, 183) 20%,
+    rgb(255, 183, 77) 40%,
+    rgb(76, 175, 80) 60%,
+    rgb(76, 175, 80) 80%,
+    rgb(76, 175, 80) 100%
+  );
+
+  -webkit-background-clip: text;
+  color: transparent;
 }
