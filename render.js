@@ -4,21 +4,23 @@ import matter from "gray-matter"
 import { JSDOM } from "jsdom"
 import markdownit from "markdown-it"
 import Shiki from "@shikijs/markdown-it"
-import { addFilenameAttribute } from "./addFilenameAttribute"
 
 const contentsDir = path.resolve(process.cwd(), "contents")
 const outputDir = path.resolve(process.cwd(), "blog")
 const metadataFile = path.resolve(process.cwd(), "metadata.json")
 let metadata = {}
 
-const md = new markdownit()
+const md = new markdownit({
+  html: true,
+})
 md.use(
   await Shiki({
     theme: "andromeeda",
   }),
 )
+//md.use(addFilenameAttribute)
 
-md.use(addFilenameAttribute)
+
 async function processFile(file) {
   console.log("Processing", file)
   const filePath = path.join(contentsDir, file)
