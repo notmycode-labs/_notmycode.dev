@@ -1,7 +1,6 @@
 import { defineConfig } from "vite"
 import fs from "fs"
 import path from "path"
-import Sitemap from "vite-plugin-sitemap"
 
 function getHtmlEntries(paths) {
   const entries = {}
@@ -25,15 +24,7 @@ function getHtmlEntries(paths) {
 }
 
 export default defineConfig({
-  plugins: [
-    Sitemap(
-      getHtmlEntries([
-        { baseDir: ".", patterns: ["index.html"] },
-        { baseDir: "blog", patterns: ["*.html"] },
-      ]),
-    ),
-  ],
-  //ViteImageOptimizer(DEFAULT_OPTIONS),
+  plugins: [],
 
   build: {
     rollupOptions: {
