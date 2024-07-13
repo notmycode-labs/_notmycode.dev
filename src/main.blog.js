@@ -1,5 +1,3 @@
-import tippy from "tippy.js"
-
 import metadata from "/metadata.json"
 
 function renderBlogPosts() {
