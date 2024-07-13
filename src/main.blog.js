@@ -24,8 +24,5 @@ function renderBlogPosts() {
   })
 }
 
-tippy(".posts", {
-  content: "My tooltip!",
-})
 
 document.addEventListener("DOMContentLoaded", renderBlogPosts)
