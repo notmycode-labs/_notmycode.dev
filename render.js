@@ -5,7 +5,6 @@ import { JSDOM } from "jsdom"
 import markdownit from "markdown-it"
 import Shiki from "@shikijs/markdown-it"
 
-
 const contentsDir = path.resolve(process.cwd(), "contents")
 const outputDir = path.resolve(process.cwd(), "blog")
 const metadataFile = path.resolve(process.cwd(), "metadata.json")
@@ -19,7 +18,6 @@ md.use(
     theme: "andromeeda",
   }),
 )
-
 
 async function processFile(file) {
   console.log("Processing", file)
@@ -45,8 +43,24 @@ async function processFile(file) {
 </head>
 
 <body class="prose md:prose-lg lg:prose-3xl p-2 prose-h1:text-3xl prose-invert prose-neutral mx-auto h-screen prose-img:rounded-xl prose-video:rounded-lg">
-<h2 class="text-center theme-toggle">${data.title}</h2>
 
+   <nav class="flex items-center py-1.5 not-prose">
+        <!--<img class="mr-1.5 h-auto w-8 rounded-full"  height="64" width="64"/> */}-->
+        <a href="/">
+          <span class="text-xl font-bold">Home</span>
+        </a>
+  
+        <div class="flex text-md font-bold space-x-2 ml-auto">
+          <div>
+            <a href="https://github.com/notmycode-labs">GitHub</a>
+          </div>
+          <div>
+            <a href="/blog">Blog</a>
+          </div>
+        </div>
+      </nav>
+
+      <h2 class="text-center theme-toggle">${data.title}</h2>
 <div id="info" class="text-sm font-bold"></div>
 <div id="tags" class="not-prose items-center">
 <p class="inline-flex text-xs font-bold">Tags:</p>

@@ -24,5 +24,4 @@ function renderBlogPosts() {
   })
 }
 
-
 document.addEventListener("DOMContentLoaded", renderBlogPosts)

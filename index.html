@@ -10,19 +10,41 @@
     <title>notmycode</title>
   </head>
   <body>
-    <div class="flex h-screen flex-col items-center justify-center">
-      <h1 class="text-center text-lg font-bold lg:text-2xl" id="rainbow_title">
-        It's not my code<br />that's why it's notmycode.dev
-      </h1>
+    <div
+      class="container mx-auto h-screen max-w-md items-center px-6 md:max-w-2xl"
+    >
+      <nav class="flex items-center py-1.5">
+        <!--<img class="mr-1.5 h-auto w-8 rounded-full"  height="64" width="64"/> */}-->
+        <a href="/">
+          <span class="text-xl font-bold">Home</span>
+        </a>
 
-      <div class="text-md font-bold">
+        <div class="text-md ml-auto flex space-x-2 font-bold">
+          <div>
+            <a href="https://github.com/notmycode-labs">GitHub</a>
+          </div>
+          <div>
+            <a href="/blog">Blog</a>
+          </div>
+        </div>
+      </nav>
+
+      <div class="flex h-screen items-center justify-center">
+        <h1
+          class="text-center text-lg font-bold lg:text-2xl"
+          id="rainbow_title"
+        >
+          It's not my code<br />that's why it's notmycode.dev
+        </h1>
+
+        <!--  <div class="text-md font-bold">
         <span class=""
           ><a href="https://github.com/notmycode-labs">GitHub</a></span
         >
         <span class=""><a href="/blog">Blog</a></span>
+      </div>-->
       </div>
     </div>
-
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>
