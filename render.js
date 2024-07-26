@@ -5,7 +5,6 @@ import { JSDOM } from "jsdom"
 import markdownit from "markdown-it"
 import Shiki from "@shikijs/markdown-it"
 
-import { execSync } from "child_process"
 
 const contentsDir = path.resolve(process.cwd(), "contents")
 const outputDir = path.resolve(process.cwd(), "blog")
@@ -21,9 +20,6 @@ md.use(
   }),
 )
 
-const commitID = execSync("git rev-parse --short HEAD", {
-  encoding: "utf8",
-}).trim()
 
 async function processFile(file) {
   console.log("Processing", file)
@@ -109,7 +105,7 @@ async function processFile(file) {
   document.body.appendChild(footer);
 */
   document.getElementById("info").innerHTML =
-    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString()}<br/>Commit ID: ${commitID}`
+    `Author: ${data.author}<br />Publish on: ${new Date(data.date).toLocaleString()}`
 
   const htmlContent = dom.serialize()
 
